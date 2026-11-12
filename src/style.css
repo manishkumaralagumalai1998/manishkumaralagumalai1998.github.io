@@ -1,0 +1,61 @@
+/* A transit map of a career: each employer or school is a colored line, each project a station. */
+:root {
+  --bg: #f3f6f5;
+  --paper: #ffffff;
+  --ink: #15201c;
+  --muted: #5b6a64;
+  --rule: #d6dfdb;
+  --code-bg: #eef2f1;
+  --l-school: #b77806;   /* B.E. */
+  --l-presidio: #0b8574; /* Presidio, consulting */
+  --l-iu: #a4262c;       /* Indiana University crimson */
+  --l-radcube: #2b57cf;  /* Radcube, now */
+  --accent: #2b57cf;
+  --display: "Overpass", "Arial Narrow", Arial, sans-serif;
+  --body: "Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Overpass Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1311; --paper: #151d1a; --ink: #e5eeea; --muted: #93a39c; --rule: #26322d; --code-bg: #1c2622;
+    --l-school: #e3a43a; --l-presidio: #2fc1aa; --l-iu: #e0646a; --l-radcube: #7a9cff; --accent: #7a9cff;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-bottom: 56px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3, h4 { font-family: var(--display); text-wrap: balance; margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; }
+.label { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+section { padding-top: 80px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 24px; }
+.sec-head h2 { font-size: clamp(30px, 4.4vw, 44px); font-weight: 900; letter-spacing: -0.015em; line-height: 1.05; }
+.sec-head p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+.btn { appearance: none; display: inline-flex; align-items: center; gap: 8px; font: 700 15px var(--body); padding: 11px 18px 9px;
+  border-radius: 999px; border: 2px solid var(--ink); background: transparent; color: var(--ink); text-decoration: none; cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s, transform .15s; }
+.btn:hover { background: var(--ink); color: var(--bg); }
+.btn:active { transform: scale(0.97); }
+.btn.solid { background: var(--ink); color: var(--bg); }
+.btn.solid:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+
+.chip { appearance: none; font: 600 14px var(--body); padding: 6px 13px 4px; border-radius: 999px; border: 1.5px solid var(--rule);
+  background: var(--paper); color: var(--ink); cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  background: var(--accent); color: var(--paper); padding: 10px 18px 8px; border-radius: 999px; font-weight: 700; font-size: 15px; z-index: 50; }
