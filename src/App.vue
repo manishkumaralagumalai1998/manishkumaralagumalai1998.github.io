@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
 import HeroSection from './components/HeroSection.vue'
 import JourneyMap from './components/JourneyMap.vue'
+const Journey3D = defineAsyncComponent(() => import('./components/Journey3D.vue'))
 import ResultsGrid from './components/ResultsGrid.vue'
 import ContactBlock from './components/ContactBlock.vue'
 import { STOPS } from './data/journey.js'
@@ -9,7 +10,15 @@ import { STOPS } from './data/journey.js'
 const fromHash = location.hash.slice(1)
 const current = ref(STOPS.some((s) => s.id === fromHash) ? fromHash : 'orbilens')
 
+const use3D = (() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return false
+  try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')) } catch { return false }
+})()
+
+const journey3d = ref(null)
+
 function goTo(id) {
+  if (use3D) { journey3d.value?.goTo(id); return }
   current.value = id
   document.getElementById('journey')?.scrollIntoView()
 }
@@ -26,7 +35,8 @@ function goTo(id) {
       </nav>
     </div>
     <HeroSection />
-    <JourneyMap v-model="current" />
+    <Journey3D v-if="use3D" ref="journey3d" />
+    <JourneyMap v-else v-model="current" />
     <ResultsGrid @pick="goTo" />
     <ContactBlock />
   </div>

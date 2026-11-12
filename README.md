@@ -5,9 +5,9 @@ My portfolio: **https://manishkumaralagumalai1998.github.io**
 My career as a transit map. Each employer or school is a colored line and each project is a stop; pick one to see
 the problem, what I built, the result and who I built it with.
 
-**Built with** Vue 3, Vite, [Motion](https://motion.dev) for the entrance and count-up animations, and
+**Built with** Vue 3, Vite, [Three.js](https://threejs.org) for the 3D journey, [Motion](https://motion.dev) for the entrance and count-up animations, and
 [canvas-confetti](https://github.com/catdad/canvas-confetti) for two small celebrations. Animations respect
-`prefers-reduced-motion`.
+`prefers-reduced-motion`; those visitors, and browsers without WebGL, get a 2D version of the map.
 
 **Run it locally**
 
