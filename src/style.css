@@ -1,20 +1,23 @@
 /* A transit map of a career: each employer or school is a colored line, each project a station. */
 :root {
-  --bg: #f4f6f5;
-  --paper: #ffffff;
-  --ink: #15201c;
-  --muted: #5b6a64;
-  --rule: #d6dfdb;
-  --code-bg: #eef2f1;
-  --l-school: #b77806;   /* B.E. */
-  --l-presidio: #0b8574; /* Presidio, consulting */
-  --l-iu: #a4262c;       /* Indiana University crimson */
-  --l-radcube: #2b57cf;  /* Radcube, now */
-  --accent: #2b57cf;
+  --bg: #060a13;
+  --paper: #0d1422;
+  --raise: #121b2d;
+  --ink: #e7eef9;
+  --muted: #8c99b0;
+  --rule: #1f2a42;
+  --code-bg: #152036;
+  --glow: #5fd4ff;        /* the one accent: cool cyan light */
+  --glow-soft: rgba(95, 212, 255, 0.16);
+  --l-school: #d8c79a;    /* career lines as quiet tints */
+  --l-presidio: #7fe0cf;
+  --l-iu: #e99aa6;
+  --l-radcube: #8fb4ff;
+  --accent: #5fd4ff;
   --display: "Overpass", "Arial Narrow", Arial, sans-serif;
   --body: "Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Overpass Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -41,15 +44,27 @@ section { padding-top: 80px; }
 .btn { appearance: none; display: inline-flex; align-items: center; gap: 8px; font: 700 15px var(--body); padding: 11px 18px 9px;
   border-radius: 999px; border: 2px solid var(--ink); background: transparent; color: var(--ink); text-decoration: none; cursor: pointer;
   transition: background .15s, color .15s, border-color .15s, transform .15s; }
-.btn:hover { background: var(--ink); color: var(--bg); }
+.btn:hover { border-color: var(--glow); color: var(--glow); box-shadow: 0 0 22px var(--glow-soft); }
 .btn:active { transform: scale(0.97); }
-.btn.solid { background: var(--ink); color: var(--bg); }
-.btn.solid:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.btn.solid { background: var(--glow); border-color: var(--glow); color: #04121c; box-shadow: 0 0 28px rgba(95, 212, 255, 0.35); }
+.btn.solid:hover { background: #8de2ff; border-color: #8de2ff; color: #04121c; }
 
 .chip { appearance: none; font: 600 14px var(--body); padding: 6px 13px 4px; border-radius: 999px; border: 1.5px solid var(--rule);
   background: var(--paper); color: var(--ink); cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
 .chip:hover { border-color: var(--ink); }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--glow); color: #04121c; border-color: var(--glow); }
 
 .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-  background: var(--accent); color: var(--paper); padding: 10px 18px 8px; border-radius: 999px; font-weight: 700; font-size: 15px; z-index: 50; }
+  background: var(--glow); color: #04121c; padding: 10px 18px 8px; border-radius: 999px; font-weight: 700; font-size: 15px; z-index: 50; }
+
+/* A faint starfield behind the whole page */
+body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.55) 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 12%, rgba(255,255,255,.45) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 38% 64%, rgba(160,220,255,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 52%, rgba(255,255,255,.4) 50%, transparent 51%),
+    radial-gradient(1px 1px at 22% 86%, rgba(255,255,255,.35) 50%, transparent 51%),
+    radial-gradient(900px 600px at 80% -10%, rgba(95,212,255,.08), transparent 70%),
+    radial-gradient(700px 500px at -10% 40%, rgba(143,180,255,.06), transparent 70%); }
+::selection { background: rgba(95, 212, 255, 0.35); }

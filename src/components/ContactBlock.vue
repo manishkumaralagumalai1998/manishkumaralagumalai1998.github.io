@@ -36,7 +36,7 @@ async function copy(e) {
     <p>I'm looking for full-stack, frontend and AI product engineering roles in the US, remote or on site.</p>
     <div class="row">
       <span ref="emailEl" class="email">{{ EMAIL }}</span>
-      <button type="button" class="btn" @click="copy">Copy email</button>
+      <button type="button" class="btn solid" @click="copy">Copy email</button>
       <a class="btn" :href="LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <p class="edu">
@@ -48,12 +48,10 @@ async function copy(e) {
 </template>
 
 <style scoped>
-.contact { margin-top: 80px; background: var(--ink); color: var(--bg); border-radius: 8px; padding: clamp(24px, 4vw, 48px); display: grid; gap: 18px; }
+.contact { margin-top: 80px; background: radial-gradient(120% 140% at 0% 0%, rgba(95,212,255,.14), transparent 55%), var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: clamp(24px, 4vw, 48px); display: grid; gap: 18px; }
 h2 { font-size: clamp(34px, 5vw, 60px); font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
 p { margin: 0; max-width: 60ch; opacity: 0.85; }
 .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .email { font-family: var(--mono); font-size: clamp(14px, 2vw, 18px); user-select: all; overflow-wrap: anywhere; margin-right: 6px; }
-.btn { border-color: var(--bg); color: var(--bg); }
-.btn:hover { background: var(--bg); color: var(--ink); }
-.edu { font-size: 14px; opacity: 0.7; padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent); max-width: none; }
+.edu { font-size: 14px; opacity: 0.7; padding-top: 10px; border-top: 1px solid var(--rule); max-width: none; }
 </style>

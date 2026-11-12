@@ -72,17 +72,17 @@ onMounted(() => {
 .tool { appearance: none; display: inline-flex; align-items: center; gap: 8px; font: 600 15px var(--body); padding: 8px 14px 6px;
   border-radius: 999px; border: 1.5px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer;
   transition: border-color .15s, background .15s, color .15s, transform .15s; }
-.tool:hover { border-color: var(--ink); transform: translateY(-1px); }
+.tool:hover { border-color: var(--glow); transform: translateY(-1px); }
 .tool.light { color: var(--muted); }
-.tool[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tool[aria-pressed="true"] { background: var(--glow); color: #04121c; border-color: var(--glow); box-shadow: 0 0 24px var(--glow-soft); }
 .dots { display: inline-flex; gap: 3px; }
-.dots i { width: 7px; height: 7px; border-radius: 50%; display: block; }
+.dots i { width: 7px; height: 7px; border-radius: 50%; display: block; box-shadow: 0 0 6px currentColor; }
 
-.panel { position: sticky; top: 24px; background: var(--paper); border: 1.5px solid var(--rule); border-radius: 10px; padding: 22px; display: grid; gap: 10px; }
+.panel { position: sticky; top: 24px; background: var(--paper); box-shadow: 0 0 0 1px var(--rule), 0 20px 60px rgba(0,0,0,.4); border: 1.5px solid var(--rule); border-radius: 10px; padding: 22px; display: grid; gap: 10px; }
 .panel h3 { font-size: 28px; font-weight: 900; letter-spacing: -0.015em; }
 .stops { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .stops button { appearance: none; width: 100%; display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; text-align: left;
-  background: var(--bg); border: 1.5px solid transparent; border-radius: 8px; padding: 10px 12px; cursor: pointer; font: inherit; color: var(--ink); }
+  background: var(--raise); border: 1.5px solid transparent; border-radius: 8px; padding: 10px 12px; cursor: pointer; font: inherit; color: var(--ink); }
 .stops button:hover { border-color: var(--c); }
 .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--c); }
 .txt { display: grid; gap: 1px; min-width: 0; }

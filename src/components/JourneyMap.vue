@@ -149,7 +149,7 @@ function onLeave(el, done) {
 .d-nav { display: flex; gap: 8px; }
 .d-nav button { appearance: none; width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--rule); background: var(--paper);
   color: var(--ink); font: 700 18px var(--body); cursor: pointer; }
-.d-nav button:hover { border-color: var(--ink); }
+.d-nav button:hover { border-color: var(--glow); }
 .d-body { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(220px, 1fr); gap: 28px 40px; margin-top: 22px; }
 .d-body h4 { margin: 0 0 6px; }
 .d-body p { margin: 0 0 16px; max-width: 64ch; }

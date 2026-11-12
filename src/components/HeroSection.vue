@@ -58,7 +58,7 @@ onMounted(() => {
 .copy { display: grid; gap: 22px; min-width: 0; }
 h1 { font-size: clamp(44px, 7.4vw, 96px); font-weight: 900; line-height: 0.92; letter-spacing: -0.035em; max-width: 12ch; }
 .w { display: inline-block; margin-right: 0.22em; }
-.w.hl { color: var(--l-radcube); }
+.w.hl { color: var(--glow); text-shadow: 0 0 34px rgba(95, 212, 255, 0.45); }
 .lede { font-size: clamp(18px, 2vw, 21px); max-width: 58ch; margin: 0; }
 .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; }
 .legend span { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); font-weight: 600; }
@@ -68,7 +68,7 @@ h1 { font-size: clamp(44px, 7.4vw, 96px); font-weight: 900; line-height: 0.92; l
 /* The portrait sits inside a ring drawn in the four career-line colors. */
 .portrait { margin: 0; aspect-ratio: 1; max-width: 100%; border-radius: 50%; padding: 10px;
   background: conic-gradient(from 200deg, var(--l-school) 0 12%, var(--l-presidio) 12% 52%, var(--l-iu) 52% 64%, var(--l-radcube) 64% 100%);
-  box-shadow: 0 24px 60px rgba(20, 40, 30, 0.14); }
+  box-shadow: 0 0 60px rgba(95, 212, 255, 0.28), 0 0 0 1px rgba(95, 212, 255, 0.25); }
 .portrait picture, .portrait img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 6px solid var(--bg); }
 
 @media (max-width: 760px) {
