@@ -148,3 +148,28 @@ export const RESULTS = [
 
 export const EMAIL = 'manishkumar.alagumalai@gmail.com'
 export const LINKEDIN = 'https://www.linkedin.com/in/manish-chhetry/'
+
+// Toolkit: every tool from the resume, grouped. `used` lists the stops where the tool appears in that project's stack.
+export const TOOLS = [
+  { group: 'Frontend', items: [
+    ['React', ['ava', 'card', 'tron', 'orbilens', 'versante']], ['Angular', ['sbsd']], ['TypeScript', ['card']],
+    ['JavaScript', []], ['Next.js', []], ['Redux', []], ['React Flow', ['ava']], ['ECharts', ['orbilens']], ['Figma', ['versante']],
+  ] },
+  { group: 'Backend & APIs', items: [
+    ['Python', ['tron', 'westfield']], ['FastAPI', ['tron', 'westfield']], ['Node.js', ['sbsd', 'ava', 'sixconnex']],
+    ['Spring Boot', ['ava']], ['Express', []], ['Flask', []], ['REST', ['tron']], ['GraphQL', ['card']], ['Prisma', ['card']],
+    ['Stripe', ['card']], ['Java', []], ['C#', []],
+  ] },
+  { group: 'AI & data', items: [
+    ['Amazon Bedrock', ['orbilens']], ['Databricks Genie', ['westfield']], ['Unity Catalog', ['westfield']],
+    ['Athena', ['orbilens']], ['AWS Glue', ['orbilens']], ['Airflow', ['tron']], ['IBM Watson', ['ava']], ['Rasa', ['ava']],
+    ['Delta Lake', []], ['SQL', ['orbilens']],
+  ] },
+  { group: 'Cloud & DevOps', items: [
+    ['Azure', ['westfield']], ['Azure AD SSO', ['westfield']], ['AWS Lambda', ['sixconnex']], ['API Gateway', ['sixconnex']],
+    ['AWS CDK', ['sixconnex']], ['Chime SDK', ['sixconnex']], ['S3', ['orbilens']], ['Docker', ['tron']], ['Jenkins', []], ['Git', []],
+  ] },
+  { group: 'Databases & testing', items: [
+    ['IBM DB2', ['sbsd']], ['PostgreSQL', []], ['MySQL', []], ['MongoDB', []], ['DynamoDB', []], ['Jest', []], ['Jasmine', []],
+  ] },
+]

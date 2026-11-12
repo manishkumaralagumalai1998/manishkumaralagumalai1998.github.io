@@ -3,7 +3,7 @@ import { defineAsyncComponent, ref } from 'vue'
 import HeroSection from './components/HeroSection.vue'
 import JourneyMap from './components/JourneyMap.vue'
 const Journey3D = defineAsyncComponent(() => import('./components/Journey3D.vue'))
-import ResultsGrid from './components/ResultsGrid.vue'
+import ToolKit from './components/ToolKit.vue'
 import ContactBlock from './components/ContactBlock.vue'
 import { STOPS } from './data/journey.js'
 
@@ -30,14 +30,14 @@ function goTo(id) {
       <span class="name">Manishkumar Alagumalai</span>
       <nav aria-label="Sections">
         <a href="#journey">Journey</a>
-        <a href="#results">Results</a>
+        <a href="#toolkit">Toolkit</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
     <HeroSection />
     <Journey3D v-if="use3D" ref="journey3d" />
     <JourneyMap v-else v-model="current" />
-    <ResultsGrid @pick="goTo" />
+    <ToolKit @pick="goTo" />
     <ContactBlock />
   </div>
 </template>
